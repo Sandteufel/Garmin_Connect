@@ -56,12 +56,13 @@ class Garmin_Connect(Entity):
         
         self._attrs = {}
         self._name = "steps"
-
+        self._trackedusername = UN.split("@",1)[0]
+        
     @property
     def name(self):
         """Return the name of the sensor."""
-        return "garmin_" + self._name
-
+        return "garmin_" + self._name + "_" + self._trackedusername
+    
     @property
     def state(self):
         """Return the state of the sensor."""
